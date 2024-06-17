@@ -28,11 +28,19 @@ class User2 {
 // production grade level code
 class User3 {
 
-    private _courseCounter = 1;
+    //every protected field can be accesiced in a class that inherits from the parent.
+    protected _courseCounter = 1;
 
     readonly city: string = 'Delhi';
     constructor(private name: string, public age: number) {
     }
+
+    //private method
+
+    private deleteToken():void {
+        console.log('Token deleted');
+    }
+
 
     //get and setters
     get getName():string {
@@ -48,5 +56,13 @@ class User3 {
 
     set courseCounter(courseCounter: number) {
         this._courseCounter = courseCounter;
+    }
+}
+
+class SubUser extends User3 {
+    isUser: boolean = true;
+    
+    changeCourseCount():void {
+        this._courseCounter = 4;
     }
 }

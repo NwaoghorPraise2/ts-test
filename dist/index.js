@@ -21,8 +21,13 @@ class User3 {
     constructor(name, age) {
         this.name = name;
         this.age = age;
+        //every protected field can be accesiced in a class that inherits from the parent.
         this._courseCounter = 1;
         this.city = 'Delhi';
+    }
+    //private method
+    deleteToken() {
+        console.log('Token deleted');
     }
     //get and setters
     get getName() {
@@ -36,5 +41,14 @@ class User3 {
     }
     set courseCounter(courseCounter) {
         this._courseCounter = courseCounter;
+    }
+}
+class SubUser extends User3 {
+    constructor() {
+        super(...arguments);
+        this.isUser = true;
+    }
+    changeCourseCount() {
+        this._courseCounter = 4;
     }
 }

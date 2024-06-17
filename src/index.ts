@@ -27,8 +27,26 @@ class User2 {
 
 // production grade level code
 class User3 {
+
+    private _courseCounter = 1;
+
     readonly city: string = 'Delhi';
     constructor(private name: string, public age: number) {
     }
-}
 
+    //get and setters
+    get getName():string {
+        return this.name;
+    }
+    set setName(name:string) {
+        this.name = name;
+    }
+
+    get courseCounter(): number {
+        return this._courseCounter;
+    }
+
+    set courseCounter(courseCounter: number) {
+        this._courseCounter = courseCounter;
+    }
+}

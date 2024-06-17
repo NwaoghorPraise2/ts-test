@@ -21,6 +21,20 @@ class User3 {
     constructor(name, age) {
         this.name = name;
         this.age = age;
+        this._courseCounter = 1;
         this.city = 'Delhi';
+    }
+    //get and setters
+    get getName() {
+        return this.name;
+    }
+    set setName(name) {
+        this.name = name;
+    }
+    get courseCounter() {
+        return this._courseCounter;
+    }
+    set courseCounter(courseCounter) {
+        this._courseCounter = courseCounter;
     }
 }
